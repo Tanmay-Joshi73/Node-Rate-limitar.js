@@ -1,6 +1,7 @@
 import express from 'express';
+import { count } from './middleware/rate_limitar.js';
 const app = express();
-app.get('/rate', (req, res) => {
+app.get('/Custom_limitar', count, (req, res) => {
     res.send("This is the first initial response");
 });
 app.listen(8000, '127.0.0.1', () => {
